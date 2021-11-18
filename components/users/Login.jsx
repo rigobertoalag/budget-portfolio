@@ -98,7 +98,7 @@ export default function Login({ navigation }) {
 
       {/* LOGIN BUTTON */}
       <TouchableOpacity
-        onPress={() => navigation.navigate("IndexBudget")}
+        onPress={() => navigation.navigate("TabNav")}
         style={{
           justifyContent: "center",
           backgroundColor: "#5624D0",
