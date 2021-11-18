@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Login({ navigation }) {
@@ -9,7 +9,6 @@ export default function Login({ navigation }) {
       <View
         style={{
           marginTop: "20%",
-          //   backgroundColor: "grey",
           width: "60%",
           height: 159,
           justifyContent: "center",
@@ -116,13 +115,29 @@ export default function Login({ navigation }) {
 
       <View style={{ marginTop: "10%", alignItems: "center" }}>
         <View>
-          <Text style={{ color: "#5624D0", fontSize: 14 }}>
+          <Text
+            style={{ color: "#5624D0", fontSize: 14 }}
+            onPress={() =>
+              Alert.alert("Ooops!", "Parece que esto aun no funciona :(", [
+                { text: "OK", onPress: () => console.log("OK Pressed") },
+              ])
+            }
+          >
             ¿Olvidaste tu contraseña?
           </Text>
         </View>
         <View style={{ marginTop: "15%", flexDirection: "row" }}>
           <Text style={{ fontSize: 14 }}>¿No tienes cuenta? </Text>
-          <Text style={{ color: "#5624D0", fontSize: 14 }}>Registrate</Text>
+          <Text
+            style={{ color: "#5624D0", fontSize: 14 }}
+            onPress={() =>
+              Alert.alert("Ooops!", "Parece que esto aun no funciona :(", [
+                { text: "OK", onPress: () => console.log("OK Pressed") },
+              ])
+            }
+          >
+            Registrate
+          </Text>
         </View>
       </View>
     </View>
