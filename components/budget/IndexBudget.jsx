@@ -308,6 +308,7 @@ export default function IndexBudget() {
         </ScrollView>
       </View>
 
+      {/* BOTTOM NAVIGATOR */}
       <View
         style={{
           bottom: 0,
@@ -328,7 +329,6 @@ export default function IndexBudget() {
           color="#5624D0"
           style={{ marginLeft: "5%" }}
         />
-        {/* <MaterialIcons name="add-circle" size={32} color="#5624D0" /> */}
         <MaterialIcons name="attach-money" size={32} color="#5624D0" />
         <MaterialIcons name="money-off" size={32} color="#5624D0" />
         <MaterialIcons
@@ -336,6 +336,18 @@ export default function IndexBudget() {
           size={32}
           color="#5624D0"
           style={{ marginRight: "5%" }}
+        />
+      </View>
+
+      {/* ADD BUTTON */}
+      <View
+        style={{ bottom: "3.5%", position: "absolute", alignSelf: "center" }}
+      >
+        <MaterialIcons
+          name="add-circle"
+          size={48}
+          color="#5624D0"
+          style={{ backgroundColor: "#F2F2F2" }}
         />
       </View>
     </View>
