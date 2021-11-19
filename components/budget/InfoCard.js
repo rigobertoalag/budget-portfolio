@@ -8,7 +8,6 @@ export default function InfoCard() {
                 marginTop: "10%",
                 width: "90%",
                 height: "15%",
-                backgroundColor: "grey",
                 alignSelf: "center",
                 borderRadius: 20,
                 alignItems: "center",
