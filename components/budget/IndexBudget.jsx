@@ -1,9 +1,20 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import NumberFormat from "react-number-format";
 
 import BigTitle from "./BigTitle";
 import InfoCard from "./InfoCard";
 import InfoTable from "./InfoTable";
+
+import {getAllData} from './resources/getAllData'
+import {getEntries} from './resources/getEntries'
+import {getDraws} from './resources/getDraws'
+
+const resultEntries = getEntries.map((data) => data.mount);
+const sumEntries = resultEntries.reduce((a, b) => a + b, 0);
+
+const resultDraws = getDraws.map((data) => data.mount);
+const sumDraws = resultDraws.reduce((a, b) => a + b, 0);
 
 export default function IndexBudget() {
   return (
@@ -47,12 +58,26 @@ export default function IndexBudget() {
               En el mes
             </Text>
             <Text style={{ marginLeft: "5%", fontSize: 18, color: "white" }}>
-              $1,500.50
+              <NumberFormat
+                value={sumEntries}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"$"}
+                renderText={(value) => <Text>{value}</Text>}
+              />
             </Text>
 
             <View style={{ alignItems: "flex-end", marginRight: "5%" }}>
               <Text style={{ fontSize: 14, color: "white" }}>Total</Text>
-              <Text style={{ fontSize: 18, color: "white" }}>$1,500.50</Text>
+              <Text style={{ fontSize: 18, color: "white" }}>
+                <NumberFormat
+                  value={sumEntries * 1.5}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                  renderText={(value) => <Text>{value}</Text>}
+                />
+              </Text>
             </View>
           </View>
 
@@ -87,12 +112,26 @@ export default function IndexBudget() {
               En el mes
             </Text>
             <Text style={{ marginLeft: "5%", fontSize: 18, color: "white" }}>
-              $1,500.50
+              <NumberFormat
+                value={sumDraws}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"$"}
+                renderText={(value) => <Text>{value}</Text>}
+              />
             </Text>
 
             <View style={{ alignItems: "flex-end", marginRight: "5%" }}>
               <Text style={{ fontSize: 14, color: "white" }}>Total</Text>
-              <Text style={{ fontSize: 18, color: "white" }}>$1,500.50</Text>
+              <Text style={{ fontSize: 18, color: "white" }}>
+                <NumberFormat
+                  value={sumDraws * 2.5}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                  renderText={(value) => <Text>{value}</Text>}
+                />
+              </Text>
             </View>
           </View>
         </ScrollView>
@@ -102,7 +141,7 @@ export default function IndexBudget() {
       <InfoCard />
 
       {/* TABLE CONTENT */}
-      <InfoTable />
+      <InfoTable data={getAllData} />
     </View>
   );
 }

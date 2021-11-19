@@ -5,13 +5,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import validDataInput from '../resources/validDataInput'
 
 export default function Login({navigation}) {
-  const SCREEN_WIDTH = Dimensions.get("window").width;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [valid, setValid] = useState({});
 
-  console.log(SCREEN_WIDTH)
-
+  const SCREEN_WIDTH = Dimensions.get("window").width;
   const iconSize = SCREEN_WIDTH * 0.30
 
   useEffect(() => {
