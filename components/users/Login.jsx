@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Login({ navigation }) {
+import validDataInput from '../resources/validDataInput'
+
+export default function Login({navigation}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [valid, setValid] = useState({});
+
+  useEffect(() => {
+    if(valid.correo === true & valid.pass === true){
+      navigation.navigate("TabNav")
+    }
+  }, [valid])
+
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
       {/* ICON VIEW */}
@@ -53,8 +65,10 @@ export default function Login({ navigation }) {
             style={{ marginLeft: "5%" }}
           />
           <TextInput
-            //   onChangeText={onChangeNumber}
-            //   value={number}
+            onChangeText={setEmail}
+            value={email}
+            keyboardType={"email-address"}
+            autoCapitalize={"none"}
             placeholder="Email"
             style={{
               marginLeft: "5%",
@@ -62,6 +76,11 @@ export default function Login({ navigation }) {
               width: "100%",
             }}
           />
+        </View>
+
+        {/* ERROR NO MAIL */}
+        <View style={{ alignSelf: 'flex-start', marginLeft: "5%", marginTop: "1%" }}>
+          {valid.correo === false ? <Text style={{ color: 'red', fontSize:14 }}>*Ingresa un correo</Text> : null}
         </View>
 
         {/* PASS */}
@@ -84,8 +103,9 @@ export default function Login({ navigation }) {
             style={{ marginLeft: "5%" }}
           />
           <TextInput
-            //   onChangeText={onChangeNumber}
-            //   value={number}
+            onChangeText={setPassword}
+            value={password}
+            secureTextEntry={true}
             placeholder="Contraseña"
             style={{
               marginLeft: "5%",
@@ -94,18 +114,24 @@ export default function Login({ navigation }) {
             }}
           />
         </View>
+
+        {/* ERROR NO PASS */}
+        <View style={{ alignSelf: 'flex-start', marginLeft: "5%", marginTop: "1%", marginBottom:"5%" }}>
+          {valid.pass === false ? <Text style={{ color: 'red', fontSize:14 }}>*Ingresa la contraseña</Text> : null}
+        </View>
       </View>
 
       {/* LOGIN BUTTON */}
       <TouchableOpacity
-        onPress={() => navigation.navigate("TabNav")}
+        // onPress={() => navigation.navigate("TabNav")}
+        onPress={() => setValid(validDataInput(email, password))}
         style={{
           justifyContent: "center",
           backgroundColor: "#5624D0",
           width: "90%",
           height: "7%",
           borderRadius: 10,
-          marginTop: "5%",
+          marginTop: "15%",
         }}
       >
         <Text style={{ color: "white", alignSelf: "center", fontSize: 22 }}>
