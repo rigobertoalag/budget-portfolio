@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert, Dimensions } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import validDataInput from '../resources/validDataInput'
 
 export default function Login({navigation}) {
+  const SCREEN_WIDTH = Dimensions.get("window").width;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [valid, setValid] = useState({});
+
+  console.log(SCREEN_WIDTH)
+
+  const iconSize = SCREEN_WIDTH * 0.30
 
   useEffect(() => {
     if(valid.correo === true & valid.pass === true){
@@ -22,13 +27,13 @@ export default function Login({navigation}) {
         style={{
           marginTop: "20%",
           width: "60%",
-          height: 159,
+          height: "20%",
           justifyContent: "center",
         }}
       >
         <MaterialIcons
           name="lock"
-          size={125}
+          size={iconSize}
           color="#5624D0"
           style={{ alignSelf: "center" }}
         />
