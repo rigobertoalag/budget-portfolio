@@ -1,18 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
-import BigTitle from './BigTitle'
+import BigTitle from "./BigTitle";
 import CategoriesBudget from "./CategoriesBudget";
 
-export default function SavingDetails() {
+export default function WithDrawDetails() {
   return (
     <View style={{ flex: 1 }}>
-
       {/* HEADER  */}
-      <BigTitle title="Ahorros Totales"/>
+      <BigTitle title="Gastos Totales" />
 
       <View style={{ marginTop: "5%", width: "100%", alignItems: "flex-end" }}>
-        <Text style={{ marginRight: "10%", fontSize: 24, color: 'green' }}>+ $1,500.50</Text>
+        <Text style={{ marginRight: "10%", fontSize: 24, color: "red" }}>
+          - $1,500.50
+        </Text>
       </View>
 
       {/* GRAPH CONTAINER */}
@@ -29,8 +30,7 @@ export default function SavingDetails() {
       </View>
 
       <View style={{ marginTop: "10%", height: "25%", width: "100%" }}>
-      
-      <CategoriesBudget />
+        <CategoriesBudget />
       </View>
     </View>
   );

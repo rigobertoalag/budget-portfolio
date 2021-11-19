@@ -3,8 +3,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import IndexBudget from "./budget/IndexBudget";
-import SavingDetails from "./budget/SavingDetails";
+import IndexBudget from "./budget/IndexBudget.jsx";
+import SavingDetails from "./budget/SavingDetails.jsx";
+import Profile from "./users/Profile.jsx";
+import WithDrawDetails from "./budget/WithdrawDetails.jsx";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,8 +41,8 @@ export default function App() {
         <Tab.Screen name="Inicio" component={IndexBudget} />
         <Tab.Screen name="Ahorros" component={SavingDetails} />
         <Tab.Screen name="Añadir" component={SavingDetails} />
-        <Tab.Screen name="Gastos" component={SavingDetails} />
-        <Tab.Screen name="Perfil" component={SavingDetails} />
+        <Tab.Screen name="Gastos" component={WithDrawDetails} />
+        <Tab.Screen name="Perfil" component={Profile} />
       </Tab.Navigator>
     </NavigationContainer>
   );
