@@ -1,13 +1,12 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image } from "react-native";
 
-import BigTitle from '../budget/BigTitle'
+import BigTitle from "../budget/BigTitle";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
   return (
     <View style={{ flex: 1 }}>
-
-      <BigTitle title="Perfil"/>
+      <BigTitle title="Perfil" />
 
       <View
         style={{
@@ -20,12 +19,18 @@ export default function Profile() {
       >
         <View
           style={{
-            height: "40%",
-            width: "40%",
-            backgroundColor: "gray",
-            borderRadius: 100,
+            height: "50%",
+            width: "50%",
+            // backgroundColor: "gray",
           }}
-        ></View>
+        >
+          <Image
+            style={{ height: "100%", width: "100%", borderRadius: 100, }}
+            source={{
+              uri: "https://picsum.photos/400/400",
+            }}
+          />
+        </View>
 
         <Text style={{ marginTop: "5%", fontSize: 18 }}>user.name</Text>
         <Text style={{ marginTop: "5%", fontSize: 18 }}>
@@ -40,7 +45,7 @@ export default function Profile() {
           marginLeft: "5%",
         }}
       >
-        <Button title="Cerrar sesion" />
+        {/* <Button title="Cerrar sesion" onPress={() => navigation.navigate('App', {screen: 'Login'})}/> */}
       </View>
     </View>
   );
