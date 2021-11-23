@@ -38,7 +38,7 @@ export default function IndexBudget() {
           >
             <Text
               style={{
-                marginTop: "10%",
+                marginTop: "5%",
                 marginLeft: "5%",
                 fontSize: 18,
                 color: "white",
@@ -49,7 +49,7 @@ export default function IndexBudget() {
 
             <Text
               style={{
-                marginTop: "10%",
+                marginTop: "5%",
                 marginLeft: "5%",
                 fontSize: 14,
                 color: "white",
@@ -93,7 +93,7 @@ export default function IndexBudget() {
           >
             <Text
               style={{
-                marginTop: "10%",
+                marginTop: "5%",
                 marginLeft: "5%",
                 fontSize: 18,
                 color: "white",
@@ -103,7 +103,7 @@ export default function IndexBudget() {
             </Text>
             <Text
               style={{
-                marginTop: "10%",
+                marginTop: "5%",
                 marginLeft: "5%",
                 fontSize: 14,
                 color: "white",
