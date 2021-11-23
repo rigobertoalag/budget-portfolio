@@ -19,22 +19,21 @@ export default function Profile({ navigation }) {
       >
         <View
           style={{
-            height: "50%",
-            width: "50%",
-            // backgroundColor: "gray",
+            height: "60%",
+            width: "55%",
           }}
         >
           <Image
-            style={{ height: "100%", width: "100%", borderRadius: 100, }}
+            style={{ height: "100%", borderRadius: 100, }}
             source={{
               uri: "https://picsum.photos/400/400",
             }}
           />
         </View>
 
-        <Text style={{ marginTop: "5%", fontSize: 18 }}>user.name</Text>
+        <Text style={{ marginTop: "5%", fontSize: 18 }}>Usuario de prueba</Text>
         <Text style={{ marginTop: "5%", fontSize: 18 }}>
-          Usuario desde: user.created_at
+          Usuario desde: 16/11/2021
         </Text>
       </View>
       <View
