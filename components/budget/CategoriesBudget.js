@@ -39,8 +39,8 @@ export default function CategoriesBudget() {
                             key={cat.id}
                             style={{
                                 backgroundColor: cat.color,
-                                height: 144,
-                                width: 163,
+                                height: "90%",
+                                width: 150,
                                 borderRadius: 20,
                                 marginRight: 20,
                             }}
