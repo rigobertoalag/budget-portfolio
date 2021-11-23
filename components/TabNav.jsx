@@ -7,6 +7,7 @@ import IndexBudget from "./budget/IndexBudget.jsx";
 import SavingDetails from "./budget/SavingDetails.jsx";
 import Profile from "./users/Profile.jsx";
 import WithDrawDetails from "./budget/WithdrawDetails.jsx";
+import AddOrRemove from "./budget/AddOrRemove.jsx";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ export default function App() {
       >
         <Tab.Screen name="Inicio" component={IndexBudget} />
         <Tab.Screen name="Ahorros" component={SavingDetails} />
-        <Tab.Screen name="Añadir" component={SavingDetails} />
+        <Tab.Screen name="Añadir" component={AddOrRemove} />
         <Tab.Screen name="Gastos" component={WithDrawDetails} />
         <Tab.Screen name="Perfil" component={Profile} />
       </Tab.Navigator>
